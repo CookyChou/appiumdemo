@@ -11,6 +11,9 @@ from appium.webdriver.common.touch_action import TouchAction
 
 class TestXueQiu(unittest.TestCase):
 
+    list1 = ['']
+
+
     def setUp(self):
         setting = {
             'platformName': 'Android',
@@ -29,6 +32,7 @@ class TestXueQiu(unittest.TestCase):
             list1.append(self.driver.find_element_by_xpath
                          ("//*[contains(@resource-id, 'tab_name') and @text='自选']").location)
 
+    @pytest.mark.parametrize('keyworks', )
     def test_add_us(self):
         self.loaded()
         self.driver.find_element_by_xpath("//*[contains(@resource-id, 'tab_name') and @text='自选']").click()
